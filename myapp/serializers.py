@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from myapp.models import (
-    MenuCategory, 
+    Home_restaurant, 
     MenuItem, 
     ComingSoon, 
     RestaurantInfo, 
@@ -45,14 +45,14 @@ class ClientReviewSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'name', 'review', 'star_nbr',
 		)
-class MenuCategorySerializer(serializers.ModelSerializer):
+class Home_restaurantSerializer(serializers.ModelSerializer):
     menuitems = MenuItemSerializer(many=True,read_only=True)
     comsoon = ComingSoonSerializer(many=True,read_only=True)
     restaurants_infos = RestaurantInfoSerializer(many=True,read_only=True)
     contactinfos = ContactInfoSerializer(many=True,read_only=True)
     client_rewiwes = ClientReviewSerializer(many=True,read_only=True)
     class Meta:
-        model = MenuCategory
+        model = Home_restaurant
         fields = (
             'id', 'logo', 'name', 'description', 'phone_number', 'menuitems',\
             'comsoon',  'restaurants_infos', 'contactinfos', 'client_rewiwes',

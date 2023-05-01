@@ -7,3 +7,5 @@ drf_yasg
 djangorestframework
 django-cors-headers
 psycopg2-binary
+django-allauth==0.54.0
+django-rest-auth==0.9.5

@@ -1,13 +1,16 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
+from rest_framework import viewsets
+from rest_framework import permissions
+
 from rest_framework import filters
 
 from django_filters.rest_framework import DjangoFilterBackend
 
 
 from myapp.models import (
-    MenuCategory, 
+    Home_restaurant, 
     MenuItem, 
     ComingSoon, 
     RestaurantInfo, 
@@ -16,7 +19,7 @@ from myapp.models import (
 )
 
 from myapp.serializers import (
-    MenuCategorySerializer,
+    Home_restaurantSerializer,
     MenuItemSerializer,
     ComingSoonSerializer,
     RestaurantInfoSerializer,
@@ -24,11 +27,11 @@ from myapp.serializers import (
     ClientReviewSerializer,
 )
 
-class MenuCategoryView(ModelViewSet):
-    queryset = MenuCategory.objects.all()
-    serializer_class = MenuCategorySerializer
+class Home_restaurantView(ModelViewSet):
+    queryset =  Home_restaurant.objects.all()
+    serializer_class = Home_restaurantSerializer
     def list(self, request, *args, **kwargs):
-        return Response(MenuCategorySerializer(MenuCategory.objects.first()).data)
+        return Response(Home_restaurantSerializer(Home_restaurant.objects.first()).data)
 
 class MenuItemView(ModelViewSet):
     queryset = MenuItem.objects.all()

@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter as DR
 
 
 from myapp.views import(
-    MenuCategoryView,
+    Home_restaurantView,
     MenuItemView,
     ComingSoonView,
     RestaurantInfoView,
@@ -13,7 +13,7 @@ from myapp.views import(
 
 router = DR()
 
-router.register('menu_category', MenuCategoryView, basename='menu_category')
+router.register('home_restaurant', Home_restaurantView, basename='home_restaurant')
 router.register('menuitems', MenuItemView, basename='menuitems')
 router.register('comsoon', ComingSoonView, basename='comsoon')
 router.register('restaurants_infos',RestaurantInfoView, basename='restaurants_infos')
